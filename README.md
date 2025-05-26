@@ -1,2 +1,1 @@
-# portfolio
-My personal portfolio
+# suganeshwaran30.github.io
