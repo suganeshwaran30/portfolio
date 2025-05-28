@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Typing Animation
     const typingElement = document.querySelector('.typing-animation');
-    const texts = ["Suganeshwaran A", "a Full Stack Developer", "a Java Programmer", "a Problem Solver"];
+    const texts = ["Suganeshwaran A", "a Full Stack Developer", "a Python Programmer", "a Problem Solver"];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 100;
+    let typingSpeed = 1800;
 
     function type() {
         const currentText = texts[textIndex];
