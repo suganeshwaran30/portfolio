@@ -170,18 +170,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Demo URLs for projects (replace with your actual demo URLs)
     const demoUrls = {
-        library: "https://library-management-demo.com",
-        phishing: "https://phishing-detection-demo.com",
-        portfolio: "https://your-portfolio-demo.com"
+        phishing: "https://phishing-detection-demo.com"
     };
 
     projectLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const projectId = this.getAttribute('data-project');
-            modalIframe.setAttribute('src', demoUrls[projectId]);
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            if (this.hasAttribute('data-project')) {
+                e.preventDefault();
+                const projectId = this.getAttribute('data-project');
+                modalIframe.setAttribute('src', demoUrls[projectId]);
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
         });
     });
 
@@ -247,5 +247,28 @@ document.addEventListener('DOMContentLoaded', function() {
         element.addEventListener('mouseleave', function() {
             this.removeAttribute('data-tooltip-active');
         });
+    });
+
+    // Skills Show More Button
+    const skillsMoreBtn = document.getElementById('skillsMoreBtn');
+    const hiddenSkills = document.querySelectorAll('.hidden-skill');
+    let skillsExpanded = false;
+
+    skillsMoreBtn.addEventListener('click', function() {
+        hiddenSkills.forEach(skill => {
+            skill.style.display = skillsExpanded ? 'none' : 'flex';
+        });
+        
+        skillsExpanded = !skillsExpanded;
+        this.textContent = skillsExpanded ? 'Show Less Skills' : 'Show More Skills';
+        
+        // Re-trigger animations for newly shown skills
+        if (skillsExpanded) {
+            hiddenSkills.forEach((skill, index) => {
+                setTimeout(() => {
+                    skill.classList.add('aos-animate');
+                }, index * 100);
+            });
+        }
     });
 });
