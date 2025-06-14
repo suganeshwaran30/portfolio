@@ -7,7 +7,7 @@ A professional and responsive portfolio website designed to showcase my skills, 
 - Responsive Design Principles
 
 ## 🚀 Live Demo
-🔗 [suganeshwaran30.github.io/portfolio](https://suganeshwaran30.github.io/portfolio)
+🔗 [suganeshwaran.netlify.app](https://suganeshwaran.netlify.app)
 
 ## 📌 Features
 - Interactive landing page with animated typing and icons  
